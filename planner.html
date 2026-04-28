@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deon x Finance — 30-Day Content Planner</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C96B;
+    --black: #0A0A0A;
+    --dark: #121212;
+    --card: #1A1A1A;
+    --card2: #1F1F1F;
+    --border: #2A2A2A;
+    --text: #E8E8E8;
+    --muted: #888;
+    --engage: #4CAF9A;
+    --educate: #5B8FD4;
+    --promo: #D4815B;
+    --trust: #9B6FD4;
+    --viral: #D4B45B;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--black);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--dark);
+    border-bottom: 2px solid var(--gold);
+    padding: 2rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .brand {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .brand-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.4rem;
+    color: var(--gold);
+    letter-spacing: 4px;
+    line-height: 1;
+  }
+
+  .brand-sub {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--muted);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  .header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+  }
+
+  .header-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 3px;
+    color: var(--text);
+  }
+
+  .header-meta {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--muted);
+    letter-spacing: 2px;
+  }
+
+  /* LEGEND */
+  .legend-bar {
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 3rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .legend-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-right: 0.5rem;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    color: var(--muted);
+    font-family: 'Space Mono', monospace;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  /* GOAL BANNER */
+  .goal-banner {
+    background: linear-gradient(135deg, #1a1500, #0A0A0A 60%);
+    border: 1px solid var(--gold);
+    margin: 2rem 3rem;
+    border-radius: 4px;
+    padding: 1.5rem 2rem;
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+  }
+
+  .goal-block { flex: 1; }
+
+  .goal-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--gold);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .goal-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    color: var(--text);
+    line-height: 1.3;
+  }
+
+  .goal-sub {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 0.4rem;
+    line-height: 1.5;
+  }
+
+  /* WEEKLY RULES */
+  .rules-bar {
+    margin: 0 3rem 2rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1rem 1.5rem;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .rule-item {
+    font-size: 0.78rem;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .rule-icon {
+    color: var(--gold);
+    font-size: 0.9rem;
+  }
+
+  /* WEEK SECTION */
+  .week-section {
+    margin: 0 3rem 3rem;
+  }
+
+  .week-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .week-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    opacity: 0.3;
+    line-height: 1;
+  }
+
+  .week-theme {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    color: var(--text);
+    letter-spacing: 2px;
+  }
+
+  .week-focus {
+    font-size: 0.72rem;
+    color: var(--muted);
+    font-family: 'Space Mono', monospace;
+    margin-left: auto;
+    letter-spacing: 1px;
+  }
+
+  /* GRID */
+  .week-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  /* DAY CARD */
+  .day-card {
+    background: var(--card);
+    padding: 1rem;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: background 0.2s;
+    position: relative;
+  }
+
+  .day-card:hover {
+    background: var(--card2);
+  }
+
+  .day-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .day-name {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .day-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    color: var(--border);
+    line-height: 1;
+    position: absolute;
+    top: 0.6rem;
+    right: 0.8rem;
+  }
+
+  .content-type {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 2px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 700;
+    width: fit-content;
+    margin-top: 0.2rem;
+  }
+
+  .type-engage { background: rgba(76,175,154,0.15); color: var(--engage); border: 1px solid rgba(76,175,154,0.3); }
+  .type-educate { background: rgba(91,143,212,0.15); color: var(--educate); border: 1px solid rgba(91,143,212,0.3); }
+  .type-promo { background: rgba(212,129,91,0.15); color: var(--promo); border: 1px solid rgba(212,129,91,0.3); }
+  .type-trust { background: rgba(155,111,212,0.15); color: var(--trust); border: 1px solid rgba(155,111,212,0.3); }
+  .type-viral { background: rgba(212,180,91,0.15); color: var(--viral); border: 1px solid rgba(212,180,91,0.3); }
+
+  .post-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.3;
+    margin-top: 0.3rem;
+  }
+
+  .post-caption {
+    font-size: 0.72rem;
+    color: var(--muted);
+    line-height: 1.5;
+    flex: 1;
+  }
+
+  .post-format {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    margin-top: auto;
+  }
+
+  .format-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.5rem;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 1px 5px;
+    border-radius: 2px;
+    letter-spacing: 1px;
+  }
+
+  .cta-pill {
+    background: rgba(201,168,76,0.1);
+    border: 1px solid rgba(201,168,76,0.3);
+    color: var(--gold-light);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.5rem;
+    padding: 2px 6px;
+    border-radius: 2px;
+    letter-spacing: 1px;
+    margin-top: 0.3rem;
+    width: fit-content;
+  }
+
+  /* WEEKLY GOAL ROW */
+  .week-goal-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .week-goal-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.8rem 1rem;
+  }
+
+  .wg-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.55rem;
+    color: var(--gold);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+
+  .wg-text {
+    font-size: 0.78rem;
+    color: var(--text);
+    line-height: 1.4;
+  }
+
+  /* BOTTOM PINNED RULES */
+  .bottom-rules {
+    margin: 1rem 3rem 4rem;
+    background: var(--dark);
+    border: 1px solid var(--gold);
+    border-radius: 4px;
+    padding: 1.5rem 2rem;
+  }
+
+  .bottom-rules-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    color: var(--gold);
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+  }
+
+  .rules-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .br-item {
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.5;
+    display: flex;
+    gap: 8px;
+  }
+
+  .br-num {
+    color: var(--gold);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 900px) {
+    .header { padding: 1rem 1.5rem; }
+    .legend-bar, .goal-banner, .rules-bar, .week-section, .bottom-rules { margin-left: 1rem; margin-right: 1rem; padding-left: 1rem; padding-right: 1rem; }
+    .week-grid { grid-template-columns: 1fr 1fr; }
+    .rules-grid, .week-goal-row { grid-template-columns: 1fr; }
+    .goal-banner { flex-direction: column; gap: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="brand">
+    <div class="brand-name">DEON × FINANCE</div>
+    <div class="brand-sub">30-Day Content Domination Plan</div>
+  </div>
+  <div class="header-right">
+    <div class="header-title">ENGAGE → TRUST → CONVERT</div>
+    <div class="header-meta">Mon–Fri · 1 Post/Day · 30 Days</div>
+  </div>
+</div>
+
+<!-- LEGEND -->
+<div class="legend-bar">
+  <span class="legend-label">Content Type →</span>
+  <div class="legend-item"><div class="dot" style="background:var(--engage)"></div> ENGAGE</div>
+  <div class="legend-item"><div class="dot" style="background:var(--educate)"></div> EDUCATE</div>
+  <div class="legend-item"><div class="dot" style="background:var(--promo)"></div> PROMO</div>
+  <div class="legend-item"><div class="dot" style="background:var(--trust)"></div> TRUST</div>
+  <div class="legend-item"><div class="dot" style="background:var(--viral)"></div> VIRAL HOOK</div>
+</div>
+
+<!-- GOAL BANNER -->
+<div class="goal-banner">
+  <div class="goal-block">
+    <span class="goal-tag">Mission</span>
+    <div class="goal-text">Turn Followers Into Paying Clients</div>
+    <div class="goal-sub">Build the know-like-trust loop daily. Every post moves people one step closer to booking Deon's financial services.</div>
+  </div>
+  <div class="goal-block">
+    <span class="goal-tag">Brand Voice</span>
+    <div class="goal-text">Real. Direct. Results-Driven.</div>
+    <div class="goal-sub">Speak like the financially-savvy friend your audience never had. No jargon. No fluff. Just clarity and credibility.</div>
+  </div>
+  <div class="goal-block">
+    <span class="goal-tag">Core Offer</span>
+    <div class="goal-text">Financial Coaching & Strategy</div>
+    <div class="goal-sub">Push people from financial stress → financial clarity → booking a session with Deon. Always be leading toward the service.</div>
+  </div>
+</div>
+
+<!-- PINNED RULES -->
+<div class="rules-bar">
+  <span style="font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--gold);letter-spacing:2px;">ALWAYS ON EVERY POST →</span>
+  <div class="rule-item"><span class="rule-icon">★</span> Share to Story + Timeline</div>
+  <div class="rule-item"><span class="rule-icon">★</span> Add a clear CTA in every caption</div>
+  <div class="rule-item"><span class="rule-icon">★</span> Reply to every comment within 2 hrs</div>
+  <div class="rule-item"><span class="rule-icon">★</span> Use #DeonxFinance on all posts</div>
+  <div class="rule-item"><span class="rule-icon">★</span> DM anyone who engages with offers</div>
+</div>
+
+
+<!-- ======= WEEK 1 ======= -->
+<div class="week-section">
+  <div class="week-header">
+    <div class="week-num">01</div>
+    <div class="week-theme">INTRODUCE & ESTABLISH AUTHORITY</div>
+    <div class="week-focus">GOAL: Build brand awareness → make them follow & trust</div>
+  </div>
+  <div class="week-grid">
+
+    <div class="day-card">
+      <div class="day-header"><span class="day-name">Monday</span></div>
+      <div class="day-num">1</div>
+      <div class="content-type type-trust">TRUST</div>
+      <div class="post-title">Who Is Deon x Finance? — Origin Story</div>
+      <div class="post-caption">Share the personal "why" behind the brand. Where did the financial struggle start? What changed? Make it raw and real — vulnerability builds instant trust.</div>
+      <div class="cta-pill">CTA → "Follow for real money moves"</div>
+      <div class="post-format"><span class="format-tag">REEL / VIDEO</span><span class="format-tag">2 MIN</span></div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header"><span class="day-name">Tuesday</span></div>
+      <div class="day-num">2</div>
+      <div class="content-type type-educate">EDUCATE</div>
+      <div class="post-title">The #1 Money Mistake Most People Make</div>
+      <div class="post-caption">Call out the most common financial error your audience makes (living paycheck to paycheck, no emergency fund, bad debt). Position Deon as the person who sees what others miss.</div>
+      <div class="cta-pill">CTA → "Save this post — share with someone who needs it"</div>
+      <div class="post-format"><span class="format-tag">CAROUSEL</span><span class="format-tag">5 SLIDES</span></div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header"><span class="day-name">Wednesday</span></div>
+      <div class="day-num">3</div>
+      <div class="content-type type-engage">ENGAGE</div>
+      <div class="post-title">AMA — Ask Deon Anything About Money</div>
+      <div class="post-caption">Open floor for money questions. Answer in the comments. This shows expertise publicly and gets the algorithm moving. Announce it as a weekly thing to build habit.</div>
+      <div class="cta-pill">CTA → "Drop your #1 money question below 👇"</div>
+      <div class="post-format"><span class="format-tag">STORY POLL</span><span class="format-tag">FEED POST</span></div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header"><span class="day-name">Thursday</span></div>
+      <div class="day-num">4</div>
+      <div class="content-type type-viral">VIRAL HOOK</div>
+      <div class="post-title">"If I Had $1,000 Right Now, Here's EXACTLY What I'd Do"</div>
+      <div class="post-caption">Step-by-step breakdown. Specific. No fluff. This is shareable gold. People tag friends and save this type of content constantly.</div>
+      <div class="cta-pill">CTA → "Save this + tag someone who needs a plan"</div>
+      <div class="post-format"><span class="format-tag">REEL</span><span class="format-tag">TALKING HEAD</span></div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header"><span class="day-name">Friday</span></div>
+      <div class="day-num">5</div>
+      <div class="content-type type-trust">TRUST</div>
+      <div class="post-title">Client Win Friday — Real Result, Real Person</div>
+      <div class="post-caption">Share a client testimonial or transformation story (anonymized if needed). Before/after: "My client came to me drowning in debt. 90 days later…" This sells without selling.</div>
+      <div class="cta-pill">CTA → "Ready for your win? Link in bio to work with Deon"</div>
+      <div class="post-format"><span class="format-tag">GRAPHIC</span><span class="format-tag">STORY</span></div>
+    </div>
+
+  </div>
+  <div class="week-goal-row">
+    <div class="week-goal-card"><div class="wg-label">Week 1 KPI</div><div class="wg-text">+200 new followers, 50+ comments on AMA, 100+ saves on carousel</div></div>
+    <div class="week-goal-card"><div class="wg-label">Repurpose</div><div class="wg-text">Every Reel becomes a Story. Every carousel slide becomes a single post. Stretch all content.</div></div>
+    <div class="week-goal-card"><div class="wg-label">DM Strategy</div><div class="wg-text">DM every new follower: "Welcome! What's your biggest money challenge right now?" — start the convo</div></div>
+  </div>
+</div>
+
+
+<!-- ======= WEEK 2 ======= -->
+<div class="week-section">
+  <div class="week-header">
+    <div class="week-num">02</div>
+    <div class="week-theme">EDUCATE & BUILD THE NEED</div>
+    <div class="week-focus">GOAL: Make them realize they need help — and Deon is the answer</div>
+  </div>
+  <div class="week-grid">
+
+    <div class="day-card">
+      <div class="day-header"><span class="day-name">Monday</span></div>
+      <div class="day-num">6</div>
+      <div class="content-type type-educate">EDUCATE</div>
+      <div class="post-title">The 50/30/20 Rule — Does It Actually Work?</div>
+      <div class="post-caption">Break down the budgeting rule. Show when it works, when it fails, and what Deon does instead. Positions Deon's approach as superior without trashing the mainstream.</div>
+      <div class="cta-pill">CTA → "Do you use this? Comment YES or NO"</div>
+      <div class="post-format"><span class="format-tag">CAROUSEL</span><span class="format-tag">6 SLIDES</span></div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header"><span class="day-name">Tuesday</span></div>
+      <div class="day-num">7</div>
+      <div class="content-type type-viral">VIRAL HOOK</div>
+      <div class="post-title">Signs You're Bad With Money (And Don't Know It)</div>
+      <div class="post-caption">List format — hits close to home. People will tag someone. This is the "calling you out" content that stops the scroll. End with: "Which one hit different?"</div>
+      <div class="cta-pill">CTA → "Tag someone who needs to see this"</div>
+      <div class="post-format"><span class="format-tag">REEL</span><span class="format-tag">TEXT OVERLAY</span></div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header"><span class="day-name">Wednesday</span></div>
+      <div class="day-num">8</div>
+      <div class="content-type type-engage">ENGAGE</div>
+      <div class="post-title">Poll: What's Your Biggest Money Block?</div>
+      <div class="post-caption">Run a Story poll + feed post. Options: A) Debt  B) No savings  C) Low income  D) Bad habits. Comment the results in the feed. Drives insane engagement and gives market research.</div>
+      <div class="cta-pill">CTA → "Vote + share your story in the comments"</div>
+      <div class="post-format"><span class="format-tag">STORY POLL</span><span class="format-tag">FEED GRAPHIC</span></div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header"><span class="day-name">Thursday</span></div>
+      <div class="day-num">9</div>
+      <div class="content-type type-educate">EDUCATE</div>
+      <div class="post-title">Debt Payoff: Snowball vs Avalanche Method</div>
+      <div class="post-caption">Deep dive comparison. Use real numbers. Show which one saves more money, which one builds momentum. End with Deon's personal recommendation. Educational but opinionated = shareable.</div>
+      <div class="cta-pill">CTA → "Save this for your debt payoff plan"</div>
+      <div class="post-format"><span class="format-tag">CAROUSEL</span><span class="format-tag">INFOGRAPHIC</span></div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header"><span class="day-name">Friday</span></div>
+      <div class="day-num">10</div>
+      <div class="content-type type-promo">PROMO</div>
+      <div class="post-title">What Working With Deon Actually Looks Like</div>
+      <div class="post-caption">Show the process — not just the result. What happens in a coaching session? What does a client walk away with? Remove the mystery from buying. Make it concrete and low-risk to inquire.</div>
+      <div class="cta-pill">CTA → "Book your free discovery call — link in bio"</div>
+      <div class="post-format"><span class="format-tag">REEL</span><span class="format-tag">WALKTHROUGH</span></div>
+    </div>
+
+  </div>
+  <div class="week-goal-row">
+    <div class="week-goal-card"><div class="wg-label">Week 2 KPI</div><div class="wg-text">3+ DM conversations started, 1 booking inquiry, 80+ poll votes</div></div>
+    <div class="week-goal-card"><div class="wg-label">Story Strategy</div><div class="wg-text">Post 3–5 Stories daily. Use quiz stickers, sliders, and countdowns to keep the algorithm fed between posts.</div></div>
+    <div class="week-goal-card"><div class="wg-label">Engage Back</div><div class="wg-text">Reply to every poll response in DMs personally. That's warm leads. Don't let them go cold.</div></div>
+  </div>
+</div>
+
+
+<!-- ======= WEEK 3 ======= -->
+<div class="week-section">
+  <div class="week-header">
+    <div class="week-num">03</div>
+    <div class="week-theme">SOCIAL PROOF & AUTHORITY STACKING</div>
+    <div class="week-focus">GOAL: Make them feel like everyone is working with Deon — FOMO kicks in</div>
+  </div>
+  <div class="week-grid">
+
+    <div class="day-card">
+      <div class="day-header"><span class="day-name">Monday</span></div>
+      <div class="day-num">11</div>
+      <div class="content-type type-trust">TRUST</div>
+      <div class="post-title">Client Spotlight — "I Paid Off $12K in 6 Months"</div>
+      <div class="post-caption">Feature a real client story. If you don't have testimonials yet, use a composite "client type" story or interview-format. Specificity makes it believable. Numbers = credibility.</div>
+      <div class="cta-pill">CTA → "Ready to be the next story? DM 'READY'"</div>
+      <div class="post-format"><span class="format-tag">GRAPHIC</span><span class="format-tag">QUOTE CARD</span></div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header"><span class="day-name">Tuesday</span></div>
+      <div class="day-num">12</div>
+      <div class="content-type type-viral">VIRAL HOOK</div>
+      <div class="post-title">The Financial System Is Set Up Against You — Here's Proof</div>
+      <div class="post-caption">Call out structural financial issues — high APR credit cards, predatory payday loans, no financial education in schools. Position Deon as the advocate fighting for the everyday person.</div>
+      <div class="cta-pill">CTA → "Agree or disagree? Comment below"</div>
+      <div class="post-format"><span class="format-tag">REEL</span><span class="format-tag">OPINION PIECE</span></div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header"><span class="day-name">Wednesday</span></div>
+      <div class="day-num">13</div>
+      <div class="content-type type-engage">ENGAGE</div>
+      <div class="post-title">Wednesday Check-In: How's Your Money This Month?</div>
+      <div class="post-caption">Relatable midweek check-in. "Crushin' it 💪 / Surviving 😅 / We don't talk about it 😭" — comment below. This is community-building. It makes the page feel like a safe money space.</div>
+      <div class="cta-pill">CTA → "Be honest — this is a judgment-free zone"</div>
+      <div class="post-format"><span class="format-tag">SIMPLE GRAPHIC</span><span class="format-tag">MEME FORMAT</span></div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header"><span class="day-name">Thursday</span></div>
+      <div class="day-num">14</div>
+      <div class="content-type type-educate">EDUCATE</div>
+      <div class="post-title">Credit Score 101 — What Actually Moves the Needle</div>
+      <div class="post-caption">Break down the 5 credit score factors with percentages. Debunk myths. Show the fastest legal ways to improve a score. This content stays relevant forever — high save potential.</div>
+      <div class="cta-pill">CTA → "Save this + share with someone rebuilding credit"</div>
+      <div class="post-format"><span class="format-tag">CAROUSEL</span><span class="format-tag">7 SLIDES</span></div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header"><span class="day-name">Friday</span></div>
+      <div class="day-num">15</div>
+      <div class="content-type type-promo">PROMO</div>
+      <div class="post-title">Halfway Through the Month — Have You Started Your Plan?</div>
+      <div class="post-caption">Urgency without pressure. "If you're reading this in the second half of the month with no financial plan, today is still a good day to start." Soft sell into a discovery call or resource.</div>
+      <div class="cta-pill">CTA → "Book a 30-min strategy call — link in bio"</div>
+      <div class="post-format"><span class="format-tag">VIDEO</span><span class="format-tag">TALKING HEAD</span></div>
+    </div>
+
+  </div>
+  <div class="week-goal-row">
+    <div class="week-goal-card"><div class="wg-label">Week 3 KPI</div><div class="wg-text">2+ bookings, 200+ saves on credit score carousel, community comments building</div></div>
+    <div class="week-goal-card"><div class="wg-label">Repost Strategy</div><div class="wg-text">Repost any client wins or tagged mentions to your Story immediately. Let the audience sell for you.</div></div>
+    <div class="week-goal-card"><div class="wg-label">Influencer Move</div><div class="wg-text">Tag 1 financial influencer or mentor you respect this week. Mention why. Cross-exposure opportunity.</div></div>
+  </div>
+</div>
+
+
+<!-- ======= WEEK 4 ======= -->
+<div class="week-section">
+  <div class="week-header">
+    <div class="week-num">04</div>
+    <div class="week-theme">CLOSE, CONVERT & CELEBRATE</div>
+    <div class="week-focus">GOAL: Convert warm audience into paying clients + celebrate the community</div>
+  </div>
+  <div class="week-grid">
+
+    <div class="day-card">
+      <div class="day-header"><span class="day-name">Monday</span></div>
+      <div class="day-num">16</div>
+      <div class="content-type type-educate">EDUCATE</div>
+      <div class="post-title">The Real Reason You Can't Save Money (It's Not What You Think)</div>
+      <div class="post-caption">Go deeper — it's behavioral, not mathematical. Lifestyle inflation, emotional spending, identity around money. Psychological angle makes this more engaging than tips-and-tricks content.</div>
+      <div class="cta-pill">CTA → "Which habit is holding you back? Comment below"</div>
+      <div class="post-format"><span class="format-tag">REEL</span><span class="format-tag">EDUCATIONAL</span></div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header"><span class="day-name">Tuesday</span></div>
+      <div class="day-num">17</div>
+      <div class="content-type type-viral">VIRAL HOOK</div>
+      <div class="post-title">"3 Things Rich People Do That Broke People Don't"</div>
+      <div class="post-caption">Not clickbait — deliver real insights. Focus on mindset, asset acquisition, and network. Frame it as access to information, not judgment. This type of content gets massive shares.</div>
+      <div class="cta-pill">CTA → "Save + share — your circle needs this"</div>
+      <div class="post-format"><span class="format-tag">CAROUSEL</span><span class="format-tag">BOLD TEXT</span></div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header"><span class="day-name">Wednesday</span></div>
+      <div class="day-num">18</div>
+      <div class="content-type type-trust">TRUST</div>
+      <div class="post-title">The Real You — Deon's Personal Money Journey</div>
+      <div class="post-caption">Behind-the-scenes. Share a real moment from the financial journey — a loss, a lesson, a pivot. Authenticity here creates die-hard fans. Don't be a highlight reel — be human.</div>
+      <div class="cta-pill">CTA → "Drop a 🙏 if you've ever been in a similar spot"</div>
+      <div class="post-format"><span class="format-tag">VIDEO</span><span class="format-tag">UNFILTERED</span></div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header"><span class="day-name">Thursday</span></div>
+      <div class="day-num">19</div>
+      <div class="content-type type-promo">PROMO</div>
+      <div class="post-title">Here's Exactly What You Get When You Work With Deon</div>
+      <div class="post-caption">Explicit offer breakdown. What's included, how it works, what transformation looks like, what the investment is. Remove all friction. Address objections directly in the caption. This is your pitch post.</div>
+      <div class="cta-pill">CTA → "DM 'INFO' for full details"</div>
+      <div class="post-format"><span class="format-tag">GRAPHIC</span><span class="format-tag">OFFER SHEET</span></div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header"><span class="day-name">Friday</span></div>
+      <div class="day-num">20</div>
+      <div class="content-type type-engage">ENGAGE</div>
+      <div class="post-title">Today I Learned — Share Something Financial You Discovered This Month</div>
+      <div class="post-caption">Community participation post. "Share something financial you learned this month. Drop it in the comments. Let's build together." Creates content for Deon in the comments — and keeps the community active.</div>
+      <div class="cta-pill">CTA → "Drop your lesson below 👇"</div>
+      <div class="post-format"><span class="format-tag">SIMPLE TEXT</span><span class="format-tag">COMMUNITY</span></div>
+    </div>
+
+  </div>
+  <div class="week-goal-row">
+    <div class="week-goal-card"><div class="wg-label">Week 4 KPI</div><div class="wg-text">5+ DM responses to offer post, 3+ booked calls, 1 paid client</div></div>
+    <div class="week-goal-card"><div class="wg-label">Objection Handling</div><div class="wg-text">Common objections to address in captions: "I can't afford it" / "I can figure it out myself" / "Not the right time"</div></div>
+    <div class="week-goal-card"><div class="wg-label">Close Strategy</div><div class="wg-text">Follow up every DM convo from the month. Send a personal check-in: "Hey, where are you at with your financial goals?"</div></div>
+  </div>
+</div>
+
+
+<!-- ======= WEEK 5 BONUS ======= -->
+<div class="week-section">
+  <div class="week-header">
+    <div class="week-num">05</div>
+    <div class="week-theme">BONUS WEEK — MOMENTUM & MONTH 2 SETUP</div>
+    <div class="week-focus">GOAL: Lock in what's working, seed Month 2, turn clients into advocates</div>
+  </div>
+  <div class="week-grid">
+
+    <div class="day-card">
+      <div class="day-header"><span class="day-name">Monday</span></div>
+      <div class="day-num">21</div>
+      <div class="content-type type-engage">ENGAGE</div>
+      <div class="post-title">Check the Stats — Which Post Got the Most Saves?</div>
+      <div class="post-caption">Share your top-performing content from the month. "This post got X saves — clearly you needed this." Re-promote it. Celebrate community growth. Show the page is growing.</div>
+      <div class="cta-pill">CTA → "Share this page with someone who needs financial clarity"</div>
+      <div class="post-format"><span class="format-tag">BEHIND SCENES</span><span class="format-tag">ANALYTICS</span></div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header"><span class="day-name">Tuesday</span></div>
+      <div class="day-num">22</div>
+      <div class="content-type type-viral">VIRAL HOOK</div>
+      <div class="post-title">Unpopular Opinion: Budgeting Apps Are a Waste of Time If You Don't Do This First</div>
+      <div class="post-caption">Controversial take with substance. You need a foundation before tech helps. What's the real first step? Build curiosity, deliver value. "Unpopular Opinion" posts stop scrolls every time.</div>
+      <div class="cta-pill">CTA → "Agree? Fight me in the comments 😤"</div>
+      <div class="post-format"><span class="format-tag">REEL</span><span class="format-tag">OPINION</span></div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header"><span class="day-name">Wednesday</span></div>
+      <div class="day-num">23</div>
+      <div class="content-type type-trust">TRUST</div>
+      <div class="post-title">Gratitude Post — Thank You for 30 Days of Growth</div>
+      <div class="post-caption">Milestone post. Thank the community. Name-drop loyal commenters. Share what's coming next month. This creates loyalty and anticipation. People stay when they feel seen.</div>
+      <div class="cta-pill">CTA → "Turn on post notifications — Month 2 is 🔥"</div>
+      <div class="post-format"><span class="format-tag">VIDEO</span><span class="format-tag">PERSONAL</span></div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header"><span class="day-name">Thursday</span></div>
+      <div class="day-num">24</div>
+      <div class="content-type type-educate">EDUCATE</div>
+      <div class="post-title">Trending in Finance This Week — What You Need to Know</div>
+      <div class="post-caption">Timely content tied to a financial news trend. Interest rates, economic shifts, market moves. Deon's take on current events = thought leadership. Makes the page essential to follow, not just nice to have.</div>
+      <div class="cta-pill">CTA → "Follow for weekly finance news translated for real life"</div>
+      <div class="post-format"><span class="format-tag">CAROUSEL</span><span class="format-tag">NEWS FORMAT</span></div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header"><span class="day-name">Friday</span></div>
+      <div class="day-num">25</div>
+      <div class="content-type type-promo">PROMO</div>
+      <div class="post-title">Who Can Help You? — Deon x Finance Is Open for Clients</div>
+      <div class="post-caption">Direct close post. "If you've been watching this page for a month and you're still stuck — that's the sign. Who can help you? I can." Personal, confident, urgent without being pushy.</div>
+      <div class="cta-pill">CTA → "DM 'LET'S GO' to get started today"</div>
+      <div class="post-format"><span class="format-tag">VIDEO</span><span class="format-tag">DIRECT CLOSE</span></div>
+    </div>
+
+  </div>
+  <div class="week-goal-row">
+    <div class="week-goal-card"><div class="wg-label">Month-End KPI</div><div class="wg-text">+500 followers total, 10+ DM convos, 3–5 paying clients or calls booked</div></div>
+    <div class="week-goal-card"><div class="wg-label">Content Audit</div><div class="wg-text">Identify top 3 posts by saves/comments. Double down on that format in Month 2. Kill what didn't work.</div></div>
+    <div class="week-goal-card"><div class="wg-label">Month 2 Seed</div><div class="wg-text">Announce a new free resource, challenge, or live event for Month 2. Give people a reason to stick around and bring friends.</div></div>
+  </div>
+</div>
+
+
+<!-- BOTTOM RULES -->
+<div class="bottom-rules">
+  <div class="bottom-rules-title">DEON × FINANCE — CONTENT COMMANDMENTS</div>
+  <div class="rules-grid">
+    <div class="br-item"><span class="br-num">01</span> Every post gets shared to Story AND Timeline, same day, no exceptions.</div>
+    <div class="br-item"><span class="br-num">02</span> Every caption ends with one clear call-to-action. Never leave them hanging.</div>
+    <div class="br-item"><span class="br-num">03</span> Reply to every comment within 2 hours of posting. The algorithm rewards it.</div>
+    <div class="br-item"><span class="br-num">04</span> Anyone who DMs after a post gets a personalized response, not a template.</div>
+    <div class="br-item"><span class="br-num">05</span> Run 1 engagement question in Stories every day even on non-post days.</div>
+    <div class="br-item"><span class="br-num">06</span> Repost every client win, tag, or shoutout within the hour. Social proof is gold.</div>
+    <div class="br-item"><span class="br-num">07</span> Use #DeonxFinance on every piece of content to build the searchable brand tag.</div>
+    <div class="br-item"><span class="br-num">08</span> Repurpose every carousel into a Reel, and every Reel script into a carousel.</div>
+    <div class="br-item"><span class="br-num">09</span> Check analytics every Friday. Double what works. Cut what doesn't. Adapt fast.</div>
+  </div>
+</div>
+
+</body>
+</html>
